@@ -1,0 +1,6 @@
+= vaulty
+
+Describe your project here
+
+:include:vaulty.rdoc
+

@@ -1,0 +1,95 @@
+== vaulty - Describe your application here
+
+v0.0.1
+
+=== Global Options
+=== -f|--flagname The name of the argument
+
+Describe some flag here
+
+[Default Value] the default
+
+
+=== --help
+Show this message
+
+
+
+=== -s|--[no-]switch
+Describe some switch here
+
+
+
+=== --version
+Display the program version
+
+
+
+=== Commands
+==== Command: <tt>add  Describe arguments to add here</tt>
+Describe add here
+
+
+===== Options
+===== -f arg
+
+Describe a flag to add
+
+[Default Value] default
+
+
+===== -s
+Describe a switch to add
+
+
+
+==== Command: <tt>backup  Describe arguments to backup here</tt>
+Describe backup here
+
+
+==== Command: <tt>convert  Describe arguments to convert here</tt>
+Describe convert here
+
+
+==== Command: <tt>delete  Describe arguments to delete here</tt>
+Describe delete here
+
+
+==== Command: <tt>diff  Describe arguments to diff here</tt>
+Describe diff here
+
+
+==== Command: <tt>generate  Describe arguments to generate here</tt>
+Describe generate here
+
+
+==== Command: <tt>help  command</tt>
+Shows a list of commands or help for one command
+
+Gets help for the application or its commands. Can also list the commands in a way helpful to creating a bash-style completion function
+===== Options
+===== -c
+List commands one per line, to assist with shell completion
+
+
+
+==== Command: <tt>provision  Describe arguments to provision here</tt>
+Describe provision here
+
+
+==== Command: <tt>remove  Describe arguments to remove here</tt>
+Describe remove here
+
+
+==== Command: <tt>restore  Describe arguments to restore here</tt>
+Describe restore here
+
+
+==== Command: <tt>tree  Describe arguments to tree here</tt>
+Describe tree here
+
+
+==== Command: <tt>write  Describe arguments to write here</tt>
+Describe write here
+
+

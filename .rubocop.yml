@@ -21,3 +21,8 @@ Style/AlignHash:
   EnforcedColonStyle: key
   EnforcedHashRocketStyle: key
 
+Style/AlignParameters:
+  Enabled: false
+
+Style/IndentHash:
+  EnforcedStyle: consistent

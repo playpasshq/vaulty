@@ -16,3 +16,9 @@ before_install:
 rvm:
   - 2.3
   - 2.4
+
+addons:
+  code_climate:
+    repo_token:
+      secure: "nof51qBnGYKwvJGsFrECGdnsttHoihTFKBOPlJV7M9qIO5WKGdg/hHFTA1oIaq8njlrGs166IA9gD8IUFpVaesSVMr9W9l7LdgbcMNf+hmTLA8MmrIjTJMsyBSSXK5H7nmd36VS+XzFjhviYeVgSVppZdv+Rxyo3neieq6R6u/Ik3VLTp7RjA38Yh45iiRd549OO+A0ufZ9oOySuA03WPAiPWhyjjScK2L8+HYH5G6pEhhm6+GfN6DZU6QWbNPBCGEDk5RnLb1SfoxYDNlXZlEMre+gzO+78bquZVQOqEGF7VJUD/kDW8ZO4abEvWeDL6tlEsU5EnDAu5EIwDSZFVQUSbsqoyyX8r64EHzomaF4QAIuRZ7/5N8hJ6h+qAlxOJ3NML1+tALQriY5e5vh7ler1IjC3tozfGouMIoKFTe6FVBZir799Dm5jjVfvTDoYoLj1QcsplFtZw0s6lUQc3fNMFNPmS9t/xIDqPGNJvd5jCKYkdXs1bld9XdvjklyZglNp+cU8RMzEr6R9XvQGvjZSZqyO8IOOXMwwJpTNJ6Swt+kmAmogG5s30STE296+4Sp8/u9xfRoYbwKLbj7LwMl7IVnfQLqCfdJxVfRlCw3mxPn1mECXys2C+GFjqh0u/wPci1qAqyBBKnG1kSScfBdvuQqIoAs6nfDZFShLxlg="
+

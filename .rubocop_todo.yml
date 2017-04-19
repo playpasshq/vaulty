@@ -15,13 +15,6 @@ Metrics/AbcSize:
 Metrics/ClassLength:
   Max: 107
 
-# Offense count: 7
-# Cop supports --auto-correct.
-Style/SpaceAfterComma:
-  Exclude:
-    - 'lib/vaulty/output/table.rb'
-    - 'vaulty.gemspec'
-
 # Offense count: 17
 # Cop supports --auto-correct.
 # Configuration parameters: EnforcedStyle, SupportedStyles, ConsistentQuotesInMultiline.

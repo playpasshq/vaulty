@@ -1,5 +1,5 @@
 # Ensure we require the local version and not one we might have installed already
-require File.join([File.dirname(__FILE__),'lib','vaulty','version.rb'])
+require File.join([File.dirname(__FILE__), 'lib', 'vaulty', 'version.rb'])
 Gem::Specification.new do |s|
   s.name = 'vaulty'
   s.version = Vaulty::VERSION
@@ -17,11 +17,6 @@ Gem::Specification.new do |s|
   end
   s.bindir = 'bin'
   s.require_paths << 'lib'
-
-  s.has_rdoc = true
-  s.extra_rdoc_files = ['README.rdoc','vaulty.rdoc']
-  s.rdoc_options << '--title' << 'vaulty' << '--main' << 'README.rdoc' << '-ri'
-
   s.executables << 'vaulty'
 
   s.add_dependency "vault", '~> 0.9'

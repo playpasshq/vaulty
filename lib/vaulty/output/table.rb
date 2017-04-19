@@ -30,7 +30,7 @@ module Vaulty
       def render
         table = TTY::Table.new(data, header: header, style: :markdown)
         renderer = table.render(:ascii) do |render|
-          render.padding = [0,2,0,2]
+          render.padding = [0, 2, 0, 2]
           render.filter = @filter
         end
         prompt.say renderer

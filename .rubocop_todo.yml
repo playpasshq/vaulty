@@ -15,15 +15,6 @@ Metrics/AbcSize:
 Metrics/ClassLength:
   Max: 107
 
-# Offense count: 4
-# Cop supports --auto-correct.
-# Configuration parameters: EnforcedStyle, SupportedStyles.
-# SupportedStyles: percent, brackets
-Style/SymbolArray:
-  Exclude:
-    - 'Rakefile'
-    - 'lib/vaulty/cli_app.rb'
-
 # Offense count: 2
 # Cop supports --auto-correct.
 Style/UnneededPercentQ:

@@ -43,8 +43,7 @@ module RSpec
         @token = File.read(TOKEN_PATH)
 
         output = ""
-        while
-        io.rewind
+        while io.rewind
           output = io.read
           break unless output.empty?
         end

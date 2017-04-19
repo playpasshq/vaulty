@@ -7,9 +7,9 @@
 # versions of RuboCop, may require this file to be generated again.
 
 # Offense count: 1
-Lint/ConditionPosition:
-  Exclude:
-    - 'spec/support/vault_server.rb'
+#Lint/ConditionPosition:
+#  Exclude:
+#    - 'spec/support/vault_server.rb'
 
 # Offense count: 29
 # Cop supports --auto-correct.

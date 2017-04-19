@@ -3,19 +3,27 @@ sudo: false
 language: ruby
 cache: bundler
 
-env:
-  - VAULT_VERSION=0.7.0
-
 before_install:
   - curl -sLo vault.zip https://releases.hashicorp.com/vault/${VAULT_VERSION}/vault_${VAULT_VERSION}_linux_amd64.zip
   - unzip vault.zip
   - mkdir ~/bin
   - mv vault ~/bin
   - export PATH="~/bin:$PATH"
+  - gem update --remote bundler
+
+install:
+  - bundle install --retry=3
+
+env:
+  - VAULT_VERSION=0.7.0
 
 rvm:
-  - 2.3
-  - 2.4
+  - 2.3.1
+  - 2.4.1
+
+script:
+  - 'bundle exec rake spec'
+  - 'bundle exec rubocop'
 
 addons:
   code_climate:

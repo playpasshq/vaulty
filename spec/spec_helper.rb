@@ -1,18 +1,7 @@
-require 'codeclimate-test-reporter'
-require 'simplecov'
-require 'coveralls'
+require 'support/coverage'
 
-SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter[
-  Coveralls::SimpleCov::Formatter,
-  SimpleCov::Formatter::HTMLFormatter
-]
-
-SimpleCov.start
-
-$LOAD_PATH.unshift File.expand_path('../../lib', __FILE__)
-
-::Dir.glob(::File.expand_path('../support/*.rb', __FILE__)).each { |f| require_relative f }
-::Dir.glob(::File.expand_path('../support/**/*.rb', __FILE__)).each { |f| require_relative f }
+require 'support/aruba'
+require 'support/vault_server'
 
 require 'vaulty'
 

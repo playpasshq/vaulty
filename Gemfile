@@ -1,3 +1,8 @@
 source 'https://rubygems.org'
 gemspec
-gem 'aruba', '~> 0.14.2'
+
+group :test do
+  gem 'rdoc'
+  gem 'aruba'
+  gem 'rspec'
+end

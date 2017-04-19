@@ -23,16 +23,11 @@ spec = Gem::Specification.new do |s|
   s.executables << 'vaulty'
 
   s.add_dependency "vault", '~> 0.9'
-  s.add_dependency 'procto', '~> 0.0.3'
   s.add_dependency 'hirb', '~> 0.7.3'
+  s.add_dependency 'tty', '~> 0.7.0'
   s.add_dependency 'hashdiff', '~> 0.3.0'
-  s.add_dependency 'virtus', '~> 1.0.5'
-  s.add_dependency 'highline', '~> 1.7.8'
 
   s.add_development_dependency 'rake'
-  s.add_development_dependency 'rdoc'
-  s.add_development_dependency 'aruba'
-  s.add_development_dependency 'rspec'
 
   s.add_runtime_dependency 'gli', '2.16.0'
 end

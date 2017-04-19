@@ -26,3 +26,8 @@ Style/AlignParameters:
 
 Style/IndentHash:
   EnforcedStyle: consistent
+
+# Only exclude the CLI app since we cannot split this up in the current form
+Metrics/ClassLength:
+  Exclude:
+    - 'lib/vaulty/cli_app.rb'

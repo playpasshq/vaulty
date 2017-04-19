@@ -1,0 +1,8 @@
+#!/usr/bin/env ruby
+require 'vaulty'
+
+Vault.configure do |config|
+  config.address = ENV["VAULT_ADDR"] || 'http://127.0.0.1:8200'
+end
+
+exit Vaulty::CLIApp.run(ARGV)

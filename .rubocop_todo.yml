@@ -7,18 +7,6 @@
 # versions of RuboCop, may require this file to be generated again.
 
 # Offense count: 1
-#Lint/ConditionPosition:
-#  Exclude:
-#    - 'spec/support/vault_server.rb'
-
-# Offense count: 29
-# Cop supports --auto-correct.
-# Configuration parameters: IgnoreEmptyBlocks, AllowUnusedKeywordArguments.
-Lint/UnusedBlockArgument:
-  Exclude:
-    - 'lib/vaulty/cli_app.rb'
-
-# Offense count: 1
 # Cop supports --auto-correct.
 # Configuration parameters: AllowUnusedKeywordArguments, IgnoreEmptyMethods.
 Lint/UnusedMethodArgument:

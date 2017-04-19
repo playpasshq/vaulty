@@ -15,14 +15,6 @@ Metrics/AbcSize:
 Metrics/ClassLength:
   Max: 107
 
-# Offense count: 1
-# Cop supports --auto-correct.
-# Configuration parameters: EnforcedStyle, SupportedStyles, AllowInnerSlashes.
-# SupportedStyles: slashes, percent_r, mixed
-Style/RegexpLiteral:
-  Exclude:
-    - 'lib/vaulty/catacomb.rb'
-
 # Offense count: 7
 # Cop supports --auto-correct.
 Style/SpaceAfterComma:

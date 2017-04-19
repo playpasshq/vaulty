@@ -97,7 +97,7 @@ module Vaulty
       #
       def list(path)
         list = Vault.logical.list(path)
-        cleaned_list = Array(list).map { |folder| folder.gsub(/\//, '') }
+        cleaned_list = Array(list).map { |folder| folder.delete('/') }
         cleaned_list.reject(&:empty?).uniq
       end
 

@@ -1,7 +1,6 @@
 module Vaulty
   module CLI
     class Command
-
       def banner(msg, color: :green)
         Vaulty::Output::Banner.render(msg, color: color)
       end

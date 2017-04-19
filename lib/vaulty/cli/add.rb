@@ -1,7 +1,6 @@
 module Vaulty
   module CLI
     class Add < Command
-
       attr_reader :catacomb, :data
       # @param [Catacomb] catacomb instance
       # @param [Hash] data

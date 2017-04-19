@@ -16,3 +16,8 @@ Style/Documentation:
 
 Metrics/LineLength:
   Max: 90
+
+Style/AlignHash:
+  EnforcedColonStyle: key
+  EnforcedHashRocketStyle: key
+

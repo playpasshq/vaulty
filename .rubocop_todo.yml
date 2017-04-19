@@ -15,22 +15,6 @@ Metrics/AbcSize:
 Metrics/ClassLength:
   Max: 107
 
-# Offense count: 2
-# Cop supports --auto-correct.
-# Configuration parameters: EnforcedStyle, SupportedStyles.
-# SupportedStyles: empty_lines, empty_lines_except_namespace, empty_lines_special, no_empty_lines
-#Style/EmptyLinesAroundClassBody:
-#  Exclude:
-#    - 'lib/vaulty/cli/add.rb'
-#    - 'lib/vaulty/cli/command.rb'
-
-# Offense count: 2
-# Cop supports --auto-correct.
-Style/MutableConstant:
-  Exclude:
-    - 'lib/vaulty/output/table.rb'
-    - 'lib/vaulty/version.rb'
-
 # Offense count: 4
 # Cop supports --auto-correct.
 # Configuration parameters: PreferredDelimiters.

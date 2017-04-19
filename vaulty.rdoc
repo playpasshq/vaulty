@@ -26,21 +26,16 @@ Display the program version
 
 
 === Commands
-==== Command: <tt>add  Describe arguments to add here</tt>
-Describe add here
+==== Command: <tt>add </tt>
+Add a new key/value to the given `PATH`, multiple `key:value` can be provided
 
 
 ===== Options
-===== -f arg
+===== --secret|-s key:secret
 
-Describe a flag to add
+Key/Values to save
 
-[Default Value] default
-
-
-===== -s
-Describe a switch to add
-
+[Default Value] None
 
 
 ==== Command: <tt>backup  Describe arguments to backup here</tt>
@@ -51,8 +46,8 @@ Describe backup here
 Describe convert here
 
 
-==== Command: <tt>delete  Describe arguments to delete here</tt>
-Describe delete here
+==== Command: <tt>delete </tt>
+Deletes everything under the path recursively
 
 
 ==== Command: <tt>diff  Describe arguments to diff here</tt>
@@ -85,8 +80,8 @@ Describe remove here
 Describe restore here
 
 
-==== Command: <tt>tree  Describe arguments to tree here</tt>
-Describe tree here
+==== Command: <tt>tree </tt>
+Represents the path as a tree
 
 
 ==== Command: <tt>write  Describe arguments to write here</tt>

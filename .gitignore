@@ -3,3 +3,4 @@ Gemfile.lock
 html/
 results.html
 tmp/
+coverage/

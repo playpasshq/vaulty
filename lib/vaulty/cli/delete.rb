@@ -11,7 +11,8 @@ module Vaulty
         # Render the tree first so the user knows what we will delete
         Vaulty::CLI::Tree.call(catacomb)
         # Confirmation
-        return if prompt.no?('All above data will be recursively deleted! Are you sure?', color: :red)
+        return if prompt.no?('All above data will be ' \
+                              'recursively deleted! Are you sure?', color: :red)
 
         banner(catacomb.path, color: :red)
         # Start deleting
@@ -25,9 +26,9 @@ module Vaulty
 
       def delete_recursively(tree, path = [])
         Array(tree).each do |folder|
-          current_folder = path + [folder.name]
-          Catacomb.delete(current_folder.join('/')) unless folder.data.empty?
-          delete_recursively(folder.children, current_folder) unless folder.children.empty?
+          current_path = path + [folder.name]
+          Catacomb.delete(current_path.join('/')) unless folder.data.empty?
+          delete_recursively(folder.children, current_path) unless folder.children.empty?
         end
       end
     end

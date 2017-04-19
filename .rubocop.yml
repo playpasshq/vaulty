@@ -6,3 +6,13 @@ AllCops:
     - 'bin/*'
     - 'spec/**/*'
 
+# Don't care about frozen strings
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+# Don't care about code comments (yet)
+Style/Documentation:
+  Enabled: false
+
+Metrics/LineLength:
+  Max: 90

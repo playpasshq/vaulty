@@ -4,3 +4,5 @@ html/
 results.html
 tmp/
 coverage/
+
+pkg/

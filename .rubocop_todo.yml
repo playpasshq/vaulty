@@ -15,19 +15,6 @@ Metrics/AbcSize:
 Metrics/ClassLength:
   Max: 107
 
-# Offense count: 17
-# Cop supports --auto-correct.
-# Configuration parameters: EnforcedStyle, SupportedStyles, ConsistentQuotesInMultiline.
-# SupportedStyles: single_quotes, double_quotes
-Style/StringLiterals:
-  Exclude:
-    - 'Gemfile'
-    - 'lib/vaulty/cli/add.rb'
-    - 'lib/vaulty/cli/tree.rb'
-    - 'lib/vaulty/cli_app.rb'
-    - 'lib/vaulty/output/banner.rb'
-    - 'vaulty.gemspec'
-
 # Offense count: 4
 # Cop supports --auto-correct.
 # Configuration parameters: EnforcedStyle, SupportedStyles.

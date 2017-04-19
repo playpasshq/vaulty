@@ -56,7 +56,7 @@ module Vaulty
     arg_name 'Describe arguments to backup here'
     command :backup do |c|
       c.action do |_global_options, _options, _args|
-        puts "backup command ran"
+        puts 'backup command ran'
       end
     end
 
@@ -64,17 +64,15 @@ module Vaulty
     arg_name 'Describe arguments to convert here'
     command :convert do |c|
       c.action do |_global_options, _options, _args|
-        puts "convert command ran"
+        puts 'convert command ran'
       end
     end
-
-
 
     desc 'Describe diff here'
     arg_name 'Describe arguments to diff here'
     command :diff do |c|
       c.action do |_global_options, _options, _args|
-        puts "diff command ran"
+        puts 'diff command ran'
       end
     end
 
@@ -82,7 +80,7 @@ module Vaulty
     arg_name 'Describe arguments to generate here'
     command :generate do |c|
       c.action do |_global_options, _options, _args|
-        puts "generate command ran"
+        puts 'generate command ran'
       end
     end
 
@@ -90,7 +88,7 @@ module Vaulty
     arg_name 'Describe arguments to provision here'
     command :provision do |c|
       c.action do |_global_options, _options, _args|
-        puts "provision command ran"
+        puts 'provision command ran'
       end
     end
 
@@ -98,7 +96,7 @@ module Vaulty
     arg_name 'Describe arguments to remove here'
     command :remove do |c|
       c.action do |_global_options, _options, _args|
-        puts "remove command ran"
+        puts 'remove command ran'
       end
     end
 
@@ -106,7 +104,7 @@ module Vaulty
     arg_name 'Describe arguments to restore here'
     command :restore do |c|
       c.action do |_global_options, _options, _args|
-        puts "restore command ran"
+        puts 'restore command ran'
       end
     end
 
@@ -114,13 +112,13 @@ module Vaulty
     arg_name 'Describe arguments to write here'
     command :write do |c|
       c.action do |_global_options, _options, _args|
-        puts "write command ran"
+        puts 'write command ran'
       end
     end
 
     pre do |_global, _command, options, args|
       path = args.first
-      exit_now!("path must be provided") if path.nil? || path.empty?
+      exit_now!('path must be provided') if path.nil? || path.empty?
       options[:catacomb] = Vaulty::Catacomb.new(path)
     end
 

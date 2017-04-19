@@ -14,7 +14,7 @@ module Vaulty
         # Print out the current state
         table(catacomb.read, highlight: { matching: matching_keys, color: :red })
         # If we have matching keys and we don't want to continue, we exit
-        return if matching_keys.any? && prompt.no?("Existing secret found, overwrite?")
+        return if matching_keys.any? && prompt.no?('Existing secret found, overwrite?')
         # Print we are writing and merge the content
         banner("Writing data to #{catacomb.path.inspect}", color: :red)
         catacomb.merge(data)

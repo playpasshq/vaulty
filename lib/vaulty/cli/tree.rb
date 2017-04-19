@@ -14,7 +14,7 @@ module Vaulty
       end
 
       def call
-        spinner = TTY::Spinner.new("Loading :spinner", format: :arrow_pulse, clear: true)
+        spinner = TTY::Spinner.new('Loading :spinner', format: :arrow_pulse, clear: true)
         spinner.auto_spin
         vaulty_tree = Vaulty::VaultTree.new(catacomb: catacomb).tree
         spinner.stop

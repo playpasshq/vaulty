@@ -10,7 +10,7 @@ Gem::Specification.new do |s|
   s.summary = %q(A description of your project)
   s.description = %q(Vault CLI that is based on the Vault Ruby gem)
   s.homepage = 'https://fritz.ninja'
-  s.license = "MIT"
+  s.license = 'MIT'
 
   s.files = `git ls-files -z`.split("\x0").reject do |f|
     f.match(%r{^(test|spec|features)/})
@@ -19,7 +19,7 @@ Gem::Specification.new do |s|
   s.require_paths << 'lib'
   s.executables << 'vaulty'
 
-  s.add_dependency "vault", '~> 0.9'
+  s.add_dependency 'vault', '~> 0.9'
   s.add_dependency 'hirb', '~> 0.7.3'
   s.add_dependency 'tty', '~> 0.7.0'
   s.add_dependency 'hashdiff', '~> 0.3.0'

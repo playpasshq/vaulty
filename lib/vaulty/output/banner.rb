@@ -10,8 +10,8 @@ module Vaulty
       end
 
       def render
-        now = Time.new.strftime("%H:%M:%S")
-        formatted = msg.ljust(72, " ")
+        now = Time.new.strftime('%H:%M:%S')
+        formatted = msg.ljust(72, ' ')
         prompt.say("[#{now}] #{formatted}", color: %I[bold white #{color}])
         puts
       end

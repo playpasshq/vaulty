@@ -17,7 +17,7 @@ module Vaulty
     end
 
     class Table
-      DEFAULT_HEADER = %w[Key Value].freeze
+      DEFAULT_HEADER = %w(Key Value).freeze
       attr_reader :data, :prompt, :header
 
       def initialize(data, header: DEFAULT_HEADER, highlight: {})

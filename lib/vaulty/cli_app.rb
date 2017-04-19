@@ -14,17 +14,17 @@ module Vaulty
     end
 
     desc 'Describe some switch here'
-    switch %i[s switch]
+    switch %i(s switch)
 
     desc 'Describe some flag here'
     default_value 'the default'
     arg_name 'The name of the argument'
-    flag %i[f flagname]
+    flag %i(f flagname)
 
     desc 'Add a new key/value to the given `PATH`, multiple `key:value` can be provided'
     arg(:path)
     command :add do |c|
-      c.flag %i[secret s], desc: 'Key/Values to save', type: Array, multiple: true,
+      c.flag %i(secret s), desc: 'Key/Values to save', type: Array, multiple: true,
                            required: true, arg_name: 'key:secret'
 
       c.action do |_global_options, options, _args|

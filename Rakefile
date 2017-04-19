@@ -25,7 +25,7 @@ task :coverage do
   Rake::Task['spec'].execute
 end
 
-task default: %i[spec rubocop]
+task default: %i(spec rubocop)
 
 require 'yard'
 YARD::Rake::YardocTask.new

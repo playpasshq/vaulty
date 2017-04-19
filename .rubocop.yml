@@ -31,3 +31,12 @@ Style/IndentHash:
 Metrics/ClassLength:
   Exclude:
     - 'lib/vaulty/cli_app.rb'
+
+Style/PercentLiteralDelimiters:
+  PreferredDelimiters:
+    default: ()
+    '%i': '()'
+    '%I': '()'
+    '%r': '{}'
+    '%w': '()'
+    '%W': '()'

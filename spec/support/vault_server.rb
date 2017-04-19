@@ -56,7 +56,7 @@ module RSpec
       end
     end
 
-    def wait_for_ready(&block)
+    def wait_for_ready
       Timeout.timeout(5) do
         until File.exist?(TOKEN_PATH)
           sleep(0.25)

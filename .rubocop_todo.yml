@@ -7,13 +7,6 @@
 # versions of RuboCop, may require this file to be generated again.
 
 # Offense count: 1
-# Cop supports --auto-correct.
-# Configuration parameters: AllowUnusedKeywordArguments, IgnoreEmptyMethods.
-Lint/UnusedMethodArgument:
-  Exclude:
-    - 'spec/support/vault_server.rb'
-
-# Offense count: 1
 Lint/UselessAssignment:
   Exclude:
     - 'vaulty.gemspec'

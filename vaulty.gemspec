@@ -12,6 +12,8 @@ Gem::Specification.new do |s|
   s.homepage = 'https://fritz.ninja'
   s.license = 'MIT'
 
+  s.required_ruby_version = '~> 2.3'
+
   s.files = `git ls-files -z`.split("\x0").reject do |f|
     f.match(%r{^(test|spec|features)/})
   end

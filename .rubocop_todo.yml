@@ -15,15 +15,6 @@ Metrics/AbcSize:
 Metrics/ClassLength:
   Max: 107
 
-# Offense count: 4
-# Cop supports --auto-correct.
-# Configuration parameters: PreferredDelimiters.
-Style/PercentLiteralDelimiters:
-  Exclude:
-    - 'lib/vaulty/output/banner.rb'
-    - 'lib/vaulty/output/table.rb'
-    - 'vaulty.gemspec'
-
 # Offense count: 1
 # Cop supports --auto-correct.
 # Configuration parameters: EnforcedStyle, SupportedStyles, AllowInnerSlashes.

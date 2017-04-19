@@ -7,8 +7,8 @@ Gem::Specification.new do |s|
   s.email = ['jan@playpass.be']
   s.platform = Gem::Platform::RUBY
 
-  s.summary = %q(A description of your project)
-  s.description = %q(Vault CLI that is based on the Vault Ruby gem)
+  s.summary = 'A description of your project'
+  s.description = 'Vault CLI that is based on the Vault Ruby gem'
   s.homepage = 'https://fritz.ninja'
   s.license = 'MIT'
 

@@ -3,10 +3,10 @@ module Vaulty
     class Banner
       attr_reader :msg, :prompt, :color
 
-      def initialize(msg, color: :blue)
+      def initialize(msg, color: :blue, prompt:)
         @msg = msg
         @color = "on_#{color}".to_sym
-        @prompt = TTY::Prompt.new
+        @prompt = prompt
       end
 
       def render

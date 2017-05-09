@@ -14,7 +14,7 @@ module Vaulty
       # @param [Symbol] color optional color
       #
       def banner(msg, color: :green)
-        Vaulty::Output::Banner.render(msg, color: color)
+        Vaulty::Output::Banner.render(msg, color: color, prompt: prompt)
       end
 
       # Renders a table
@@ -24,7 +24,7 @@ module Vaulty
       # @option highlight [Symbol] :color to be used for highlighting
       #
       def table(data, highlight: {})
-        Vaulty::Output::Table.render(data, highlight: highlight)
+        Vaulty::Output::Table.render(data, highlight: highlight, prompt: prompt)
       end
 
       # Initializes a new command with the args and calls it
@@ -38,7 +38,7 @@ module Vaulty
       # @return [TTY::Prompt] instance
       #
       def prompt
-        @prompt ||= TTY::Prompt.new
+        Vaulty.prompt
       end
     end
   end

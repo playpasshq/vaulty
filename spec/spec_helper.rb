@@ -1,7 +1,6 @@
 require 'support/coverage'
-
-require 'support/aruba'
 require 'support/catacomb_mock'
+require 'support/matchers'
 
 require 'vaulty'
 

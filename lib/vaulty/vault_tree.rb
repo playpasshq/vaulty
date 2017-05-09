@@ -51,7 +51,7 @@ module Vaulty
     end
 
     def find_subtree(base_path)
-      list = Catacomb.list(base_path)
+      list = Vaulty.catacomb.list(base_path)
       list.map do |folder|
         file_or_folder = [base_path, folder].join('/')
         values = read_values_for(file_or_folder)
@@ -64,7 +64,7 @@ module Vaulty
     end
 
     def read_values_for(path)
-      Catacomb.read(path).map do |key, value|
+      Vaulty.catacomb.read(path).map do |key, value|
         Value.new(key: key, value: value)
       end
     end

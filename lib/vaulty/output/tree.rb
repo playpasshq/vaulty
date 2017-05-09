@@ -1,19 +1,19 @@
 module Vaulty
   module Output
     class Tree
-      attr_reader :tree, :value_icon, :dir_icon
+      attr_reader :tree, :prompt
 
-      def initialize(tree, value_icon: "\u{1F511}", dir_icon: "\u{1F4C2}")
+      def initialize(tree, prompt:)
         @tree = tree
-        @value_icon = value_icon
-        @dir_icon = dir_icon
+        @prompt = prompt
       end
 
       def render
         output_tree = flatten_tree(Array(tree), 0)
-        puts Hirb::Helpers::Tree.render(output_tree,
+        rendered_tree = Hirb::Helpers::Tree.render(output_tree,
           type: :directory,
           multi_line_nodes: true)
+        prompt.say(rendered_tree)
       end
 
       def self.render(*args)
@@ -35,12 +35,12 @@ module Vaulty
       def format_values(values, level)
         Array(values).map do |value|
           key_value = "#{value.key}:#{value.value}"
-          { value: [value_icon, key_value].compact.join('  '), level: level }
+          { value: ["\u{1F511}", key_value].compact.join('  '), level: level }
         end
       end
 
       def format_node(value, level)
-        { value: [dir_icon, value].compact.join('  '), level: level }
+        { value: ["\u{1F4C2}", value].compact.join('  '), level: level }
       end
     end
   end

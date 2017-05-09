@@ -1,12 +1,6 @@
 module Vaulty
   module CLI
     class Tree < Command
-      class Empty < GLI::CustomExit
-        def initialize(path)
-          super("Path #{path.inspect} contains nothing", -1)
-        end
-      end
-
       attr_reader :catacomb
       # @param [Catacomb] catacomb instance
       def initialize(catacomb:)
@@ -19,8 +13,9 @@ module Vaulty
         vaulty_tree = Vaulty::VaultTree.new(catacomb: catacomb).tree
         spinner.stop
 
-        raise Empty, catacomb.path if vaulty_tree.empty?
-        Vaulty::Output::Tree.render(vaulty_tree)
+        raise Vaulty::EmptyPath, catacomb.path if vaulty_tree.empty?
+        Vaulty::Output::Tree.render(vaulty_tree, prompt: prompt)
+        vaulty_tree
       end
     end
   end

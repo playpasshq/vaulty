@@ -1,4 +1,4 @@
-RSpec.describe Vaulty::CLI::Tree, type: :aruba do
+RSpec.describe Vaulty::CLI::Tree do
   let(:instance) { described_class.new(catacomb: catacomb) }
   let(:catacomb) { CatacombMock.new('secret') }
   let(:data) do
@@ -17,15 +17,18 @@ RSpec.describe Vaulty::CLI::Tree, type: :aruba do
     }
   end
 
-  subject { capture(:stdout) { instance.call } }
+  subject { instance.call }
+  let(:output) { instance.prompt.output.string }
 
   before :each do
-    stub_const('Vaulty::Catacomb', CatacombMock)
+    allow(Vaulty).to receive(:catacomb).and_return(CatacombMock)
+    allow(Vaulty).to receive(:prompt).and_return(TTY::TestPrompt.new)
     CatacombMock.mock_with(data)
   end
 
   it 'displays the output as a tree' do
-    expect(subject).to output_string_eq <<~TXT
+    subject
+    expect(output).to include <<~TXT
       📂  secret
       |-- 📂  first
       |   |-- 🔑  key:value
@@ -37,9 +40,10 @@ RSpec.describe Vaulty::CLI::Tree, type: :aruba do
   end
 
   context 'when the path contains nothing' do
-    let(:catacomb) { CatacombMock.new('secret/i-do-not-know') }
+    let(:catacomb) { CatacombMock.new('secret/unknown') }
     it 'raises an exception' do
-      expect { subject }.to raise_error(Vaulty::CLI::Tree::Empty, /Path "secret\/i-do-not-know" contains nothing/)
+      expect { subject }.to raise_error(Vaulty::EmptyPath,
+        /Path "secret\/unknown" contains nothing/)
     end
   end
 end

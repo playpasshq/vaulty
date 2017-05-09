@@ -30,27 +30,14 @@ class CatacombMock < Vaulty::Catacomb
 
     def delete(path)
       structure = path.split('/').map(&:to_sym)
+      return unless structure.size > 1
+      to_delete = structure.pop
       folder = mocked_data.dig(*structure) || {}
-      folder.delete
+      folder.delete(to_delete)
     end
 
     def mocked_data
-      @data || {}
+      @data ||= {}
     end
-  end
-end
-
-RSpec.configure do |config|
-  def capture(stream)
-    begin
-      stream = stream.to_s
-      eval "$#{stream} = StringIO.new"
-      yield
-      result = eval("$#{stream}").string
-    ensure
-      eval("$#{stream} = #{stream.upcase}")
-    end
-
-    result
   end
 end

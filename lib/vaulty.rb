@@ -16,8 +16,36 @@ require 'vaulty/vault_tree'
 
 require 'vaulty/cli/command'
 require 'vaulty/cli/add'
+require 'vaulty/cli/delete'
 require 'vaulty/cli/tree'
 
 require 'vaulty/output/banner'
 require 'vaulty/output/table'
 require 'vaulty/output/tree'
+
+module Vaulty
+  # This error is raised when we try to show / operate on a path
+  # that does not contain anything
+  # @see GLI::CustomExit
+  #
+  class EmptyPath < GLI::CustomExit
+    # @param [String] path
+    def initialize(path)
+      super("Path #{path.inspect} contains nothing", -1)
+    end
+  end
+
+  # Returns the prompt instance so it's always the same instance
+  # @return [TTY::Prompt]
+  #
+  def self.prompt
+    @prompt ||= TTY::Prompt.new
+  end
+
+  # Returns the Catacomb class
+  # @return [Vaulty::Catacomb]
+  #
+  def self.catacomb
+    @catacomb ||= Vaulty::Catacomb
+  end
+end

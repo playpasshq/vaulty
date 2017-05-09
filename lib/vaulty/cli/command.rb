@@ -34,8 +34,6 @@ module Vaulty
         new(*args).call
       end
 
-      private
-
       # Returns an instance of {TTY::Prompt}
       # @return [TTY::Prompt] instance
       #

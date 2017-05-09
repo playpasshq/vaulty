@@ -27,6 +27,7 @@ Gem::Specification.new do |s|
   s.add_dependency 'hashdiff', '~> 0.3.0'
 
   s.add_development_dependency 'rake'
+  s.add_development_dependency 'activesupport'
 
   s.add_runtime_dependency 'gli', '2.16.0'
 end

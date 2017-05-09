@@ -1,14 +1,10 @@
 if ENV['TRAVIS'] || ENV['COVERAGE']
   require 'simplecov'
-  SimpleCov.add_filter '/spec/'
+  require 'coveralls'
 
   if ENV['TRAVIS']
-    require 'coveralls'
-    require 'codecov'
-    SimpleCov.formatter = SimpleCov::Formatter::Codecov
-    Coveralls.wear!
+    SimpleCov.formatter = Coveralls::SimpleCov::Formatter
   end
 
-  SimpleCov.command_name "rspec_#{Process.pid}"
   SimpleCov.start
 end

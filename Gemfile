@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 gemspec
 
 group :test do
+  gem 'activesupport'
   gem 'aruba'
   gem 'codeclimate-test-reporter', '~> 1.0.0'
   gem 'coveralls', require: false
@@ -9,6 +10,5 @@ group :test do
   gem 'rspec'
   gem 'rubocop'
   gem 'simplecov'
-  gem 'activesupport'
   gem 'yard'
 end

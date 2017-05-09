@@ -5,7 +5,7 @@ module Vaulty
       # @raise [NotImplementedError]
       #
       def call
-        fail NotImplementedError, "#{inspect}.call is not implemented"
+        raise NotImplementedError, "#{inspect}.call is not implemented"
       end
 
       # Render a banner

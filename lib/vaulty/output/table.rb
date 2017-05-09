@@ -20,11 +20,11 @@ module Vaulty
       DEFAULT_HEADER = %w(Key Value).freeze
       attr_reader :data, :prompt, :header
 
-      def initialize(data, header: DEFAULT_HEADER, highlight: {})
+      def initialize(data, header: DEFAULT_HEADER, highlight: {}, prompt:)
         @data = data
-        @prompt = TTY::Prompt.new
         @filter = HighlightFilter.new(**highlight)
         @header = header
+        @prompt = prompt
       end
 
       def render

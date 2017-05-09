@@ -119,7 +119,7 @@ module Vaulty
     pre do |_global, _command, options, args|
       path = args.first
       exit_now!('path must be provided') if path.nil? || path.empty?
-      options[:catacomb] = Vaulty::Catacomb.new(path)
+      options[:catacomb] = Vaulty.catacomb.new(path)
     end
 
     post do |global, command, options, args|

@@ -9,5 +9,6 @@ group :test do
   gem 'rspec'
   gem 'rubocop'
   gem 'simplecov'
+  gem 'activesupport'
   gem 'yard'
 end

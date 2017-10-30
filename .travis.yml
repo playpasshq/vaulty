@@ -6,7 +6,7 @@ cache: bundler
 before_install:
   - curl -sLo vault.zip https://releases.hashicorp.com/vault/${VAULT_VERSION}/vault_${VAULT_VERSION}_linux_amd64.zip
   - unzip vault.zip
-  - mkdir ~/bin
+  - mkdir -p ~/bin
   - mv vault ~/bin
   - export PATH="~/bin:$PATH"
   - gem update --remote bundler
@@ -16,10 +16,11 @@ install:
 
 env:
   - VAULT_VERSION=0.7.0
+  - VAULT_VERSION=0.8.3
 
 rvm:
-  - 2.3.1
-  - 2.4.1
+  - 2.3.5
+  - 2.4.2
 
 script:
   - 'bundle exec rake spec'

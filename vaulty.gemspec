@@ -21,12 +21,12 @@ Gem::Specification.new do |s|
   s.require_paths << 'lib'
   s.executables << 'vaulty'
 
-  s.add_dependency 'vault', '~> 0.9'
+  s.add_dependency 'vault', '~> 0.10.1'
   s.add_dependency 'hirb', '~> 0.7.3'
   s.add_dependency 'tty', '~> 0.7.0'
   s.add_dependency 'hashdiff', '~> 0.3.0'
 
   s.add_development_dependency 'rake'
 
-  s.add_runtime_dependency 'gli', '2.16.0'
+  s.add_runtime_dependency 'gli', '2.17.0'
 end

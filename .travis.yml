@@ -6,7 +6,7 @@ cache: bundler
 before_install:
   - curl -sLo vault.zip https://releases.hashicorp.com/vault/${VAULT_VERSION}/vault_${VAULT_VERSION}_linux_amd64.zip
   - unzip vault.zip
-  - mkdir ~/bin
+  - mkdir -p ~/bin
   - mv vault ~/bin
   - export PATH="~/bin:$PATH"
   - gem update --remote bundler

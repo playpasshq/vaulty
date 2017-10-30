@@ -16,6 +16,7 @@ install:
 
 env:
   - VAULT_VERSION=0.7.0
+  - VAULT_VERSION=0.8.3
 
 rvm:
   - 2.3.1

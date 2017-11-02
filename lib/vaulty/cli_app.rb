@@ -54,12 +54,6 @@ module Vaulty
       options[:catacomb] = Vaulty.catacomb.new(path)
     end
 
-    post do |global, command, options, args|
-      # Post logic here
-      # Use skips_post before a command to skip this
-      # block on that command only
-    end
-
     on_error do |_exception|
       # Error logic here
       # return false to skip default error handling

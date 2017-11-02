@@ -1,4 +1,4 @@
-== Vaulty
+# Vaulty
 [![Gem Version](https://badge.fury.io/rb/vaulty.svg)](https://badge.fury.io/rb/vaulty)
 [![Build Status](https://travis-ci.org/playpasshq/vaulty.svg?branch=master)](https://travis-ci.org/playpasshq/vaulty)
 [![Test Coverage](https://codeclimate.com/github/playpasshq/vaulty/badges/coverage.svg)](https://codeclimate.com/github/playpasshq/vaulty/coverage)
@@ -11,7 +11,7 @@
 Vaulty is a CLI application that makes it easier to manage Vault.
 Only tested on the generic backend!
 
-=== Project Status
+## Project Status
 
 Very alpha, only 3 commands are supported.
 

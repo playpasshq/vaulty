@@ -1,22 +1,10 @@
-== vaulty - Describe your application here
+== vaulty - Vault CLI on steriods
 
 v0.0.1
 
 === Global Options
-=== -f|--flagname The name of the argument
-
-Describe some flag here
-
-[Default Value] the default
-
-
 === --help
 Show this message
-
-
-
-=== -s|--[no-]switch
-Describe some switch here
 
 
 
@@ -31,6 +19,13 @@ Add a new key/value to the given `PATH`, multiple `key:value` can be provided
 
 
 ===== Options
+===== --file|-f key:/path/file.ext
+
+Key/File to be uploaded
+
+[Default Value] None
+
+
 ===== --secret|-s key:secret
 
 Key/Values to save
@@ -38,24 +33,8 @@ Key/Values to save
 [Default Value] None
 
 
-==== Command: <tt>backup  Describe arguments to backup here</tt>
-Describe backup here
-
-
-==== Command: <tt>convert  Describe arguments to convert here</tt>
-Describe convert here
-
-
 ==== Command: <tt>delete </tt>
 Deletes everything under the path recursively
-
-
-==== Command: <tt>diff  Describe arguments to diff here</tt>
-Describe diff here
-
-
-==== Command: <tt>generate  Describe arguments to generate here</tt>
-Describe generate here
 
 
 ==== Command: <tt>help  command</tt>
@@ -68,23 +47,7 @@ List commands one per line, to assist with shell completion
 
 
 
-==== Command: <tt>provision  Describe arguments to provision here</tt>
-Describe provision here
-
-
-==== Command: <tt>remove  Describe arguments to remove here</tt>
-Describe remove here
-
-
-==== Command: <tt>restore  Describe arguments to restore here</tt>
-Describe restore here
-
-
 ==== Command: <tt>tree </tt>
 Represents the path as a tree
-
-
-==== Command: <tt>write  Describe arguments to write here</tt>
-Describe write here
 
 

@@ -32,7 +32,7 @@ module Vaulty
 
       def read_file_contents!(files)
         files.each_with_object({}) do |(key, path), memo|
-          memo.merge!(key => read_file(path))
+          memo[key] = read_file(path)
         end
       end
 

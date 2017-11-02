@@ -25,10 +25,10 @@ module Vaulty
     arg(:path)
     command :add do |c|
       c.flag %i(secret s), desc: 'Key/Values to save', type: Array, multiple: true,
-        required: true, arg_name: 'key:secret'
+                           required: true, arg_name: 'key:secret'
 
       c.flag %i(file f), desc: 'Key/File to be uploaded', type: Array, multiple: true,
-        arg_name: 'key:/path/file.ext'
+                         arg_name: 'key:/path/file.ext'
 
       c.action do |_global_options, options, _args|
         data = options[:secret].reduce({}, :merge)

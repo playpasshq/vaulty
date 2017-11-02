@@ -29,7 +29,7 @@ module Vaulty
 
       def render
         table = TTY::Table.new(data, header: header, style: :markdown)
-        renderer = table.render(:ascii) do |render|
+        renderer = table.render(:ascii, column_widths: [30, 80]) do |render|
           render.padding = [0, 2, 0, 2]
           render.filter = @filter
         end

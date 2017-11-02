@@ -4,9 +4,11 @@ module Vaulty
       attr_reader :catacomb, :data
       # @param [Catacomb] catacomb instance
       # @param [Hash] data
-      def initialize(catacomb:, data:)
+      # @param [Hash] files
+      def initialize(catacomb:, data: {}, files: {})
         @catacomb = catacomb
-        @data = data
+        files_with_content = read_file_contents!(files)
+        @data = data.merge(files_with_content)
       end
 
       def call
@@ -26,6 +28,16 @@ module Vaulty
 
       def matching_keys
         @matching_keys ||= catacomb.matching_keys(data.keys)
+      end
+
+      def read_file_contents!(files)
+        files.each_with_object({}) do |(key, path), memo|
+          memo.merge!(key => read_file(path))
+        end
+      end
+
+      def read_file(path)
+        File.read(File.expand_path(path))
       end
     end
   end

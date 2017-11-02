@@ -17,6 +17,10 @@ Gem::Specification.new do |s|
   s.files = `git ls-files -z`.split("\x0").reject do |f|
     f.match(%r{^(test|spec|features)/})
   end
+  s.has_rdoc = true
+  s.extra_rdoc_files = ['README.rdoc', 'vaulty.rdoc']
+  s.rdoc_options << '--title' << 'vaulty' << '--main' << 'README.rdoc' << '-ri'
+
   s.bindir = 'bin'
   s.require_paths << 'lib'
   s.executables << 'vaulty'

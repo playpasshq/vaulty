@@ -1,8 +1,8 @@
-# Vaulty 
+# Vaulty
 [![Gem Version](https://badge.fury.io/rb/vaulty.svg)](https://badge.fury.io/rb/vaulty)
-[![Build Status](https://travis-ci.org/playpasshq/vaulty.svg?branch=master)](https://travis-ci.org/playpasshq/vaulty) 
-[![Test Coverage](https://codeclimate.com/github/playpasshq/vaulty/badges/coverage.svg)](https://codeclimate.com/github/playpasshq/vaulty/coverage) 
-[![Code Climate](https://codeclimate.com/github/playpasshq/vaulty/badges/gpa.svg)](https://codeclimate.com/github/playpasshq/vaulty) 
+[![Build Status](https://travis-ci.org/playpasshq/vaulty.svg?branch=master)](https://travis-ci.org/playpasshq/vaulty)
+[![Test Coverage](https://codeclimate.com/github/playpasshq/vaulty/badges/coverage.svg)](https://codeclimate.com/github/playpasshq/vaulty/coverage)
+[![Code Climate](https://codeclimate.com/github/playpasshq/vaulty/badges/gpa.svg)](https://codeclimate.com/github/playpasshq/vaulty)
 [![Issue Count](https://codeclimate.com/github/playpasshq/vaulty/badges/issue_count.svg)](https://codeclimate.com/github/playpasshq/vaulty)
 [![Dependency Status](https://gemnasium.com/badges/github.com/playpasshq/vaulty.svg)](https://gemnasium.com/github.com/playpasshq/vaulty)
 [![Inline docs](http://inch-ci.org/github/playpasshq/vaulty.svg)](http://inch-ci.org/github/playpasshq/vaulty)

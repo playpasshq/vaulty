@@ -1,7 +1,8 @@
 RSpec.describe Vaulty::CLI::Add do
-  let(:instance) { described_class.new(catacomb: catacomb, data: data) }
+  let(:instance) { described_class.new(catacomb: catacomb, data: data, files: files) }
   let(:catacomb) { CatacombMock.new('secret/account') }
   let(:data) { { key: 'value' } }
+  let(:files) { {} }
   let(:confirmation) { true }
   let(:existing_data) { {} }
 
@@ -27,13 +28,8 @@ RSpec.describe Vaulty::CLI::Add do
 
     it 'prints the resulting table' do
       subject
-      expect(output).to include_output <<~TXT
-        +-------+---------+
-        |  Key  |  Value  |
-        +-------+---------+
-        |  key  |  value  |
-        +-------+---------+
-      TXT
+      expect(output).to include_output('key')
+      expect(output).to include_output('value')
     end
 
     context 'when existing data is present' do
@@ -43,13 +39,8 @@ RSpec.describe Vaulty::CLI::Add do
 
       it 'prints out the current table' do
         subject
-        expect(output).to include_output <<~TXT
-          +------------+---------+
-          |  Key       |  Value  |
-          +------------+---------+
-          |  existing  |  value  |
-          +------------+---------+
-        TXT
+        expect(output).to include_output('existing')
+        expect(output).to include_output('value')
       end
 
       context 'when existing data matches the given data' do
@@ -59,13 +50,8 @@ RSpec.describe Vaulty::CLI::Add do
 
         it 'prints out the table with higlights' do
           subject
-          expect(output).to include_output <<~TXT
-            +-------+---------+
-            |  Key  |  Value  |
-            +-------+---------+
-            |  key  |  value  |
-            +-------+---------+
-          TXT
+          expect(output).to include_output('key')
+          expect(output).to include_output('value')
         end
 
         context 'when answering no' do
@@ -93,15 +79,30 @@ RSpec.describe Vaulty::CLI::Add do
 
           it 'prints out the resulting table and higlights the values' do
             subject
-            expect(output).to include_output <<~TXT
-              +-------+---------------+
-              |  Key  |  Value        |
-              +-------+---------------+
-              |  key  |  other value  |
-              +-------+---------------+
-            TXT
+            expect(output).to include_output('key')
+            expect(output).to include_output('other value')
           end
         end
+      end
+    end
+
+    context 'when files are provided' do
+      let(:files) { { file: [FIXTURE_PATH, 'secret.txt'].join('/') } }
+
+      it 'prints out a banner' do
+        subject
+        expect(output).to include_output('Current value "secret/account"')
+      end
+
+      it 'writes the file contents' do
+        expect(catacomb).to receive(:merge).with(key: 'value', file: "secret\n")
+        subject
+      end
+
+      it 'prints the resulting table' do
+        subject
+        expect(output).to include_output('file')
+        expect(output).to include_output("secret")
       end
     end
   end

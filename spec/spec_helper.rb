@@ -21,6 +21,11 @@ RSpec.configure do |config|
     expectations.include_chain_clauses_in_custom_matcher_descriptions = true
   end
 
+  # Mock the TTY so we always have a width enough screen
+  config.before do
+    allow(TTY::Screen).to receive(:width).and_return(1000)
+  end
+
   # rspec-mocks config goes here. You can use an alternate test double
   # library (such as bogus or mocha) by changing the `mock_with` option here.
   config.mock_with :rspec do |mocks|

@@ -8,4 +8,4 @@
 
 # Offense count: 2
 Metrics/AbcSize:
-  Max: 25
+  Max: 30

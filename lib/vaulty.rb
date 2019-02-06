@@ -19,6 +19,7 @@ require 'vaulty/vault_tree'
 require 'vaulty/cli/command'
 require 'vaulty/cli/add'
 require 'vaulty/cli/delete'
+require 'vaulty/cli/remove'
 require 'vaulty/cli/tree'
 
 require 'vaulty/output/banner'
@@ -34,6 +35,14 @@ module Vaulty
     # @param [String] path
     def initialize(path)
       super("Path #{path.inspect} contains nothing", -1)
+    end
+  end
+
+  class MissingKeys < GLI::CustomExit
+    # @param [String] path
+    # @param [Array<String>, String] keys
+    def initialize(path, keys)
+      super("Path #{path.inspect} does not contain #{Array(keys).join(', ')}", -1)
     end
   end
 

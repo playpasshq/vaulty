@@ -2,9 +2,7 @@ if ENV['TRAVIS'] || ENV['COVERAGE']
   require 'simplecov'
   require 'coveralls'
 
-  if ENV['TRAVIS']
-    SimpleCov.formatter = Coveralls::SimpleCov::Formatter
-  end
+  SimpleCov.formatter = Coveralls::SimpleCov::Formatter if ENV['TRAVIS']
 
   SimpleCov.start
 end

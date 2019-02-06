@@ -6,7 +6,7 @@ RSpec.describe Vaulty::CLI::Tree do
       secret: {
         first: {
           nested: {
-            _data: { key: 'value' },
+            _data: { key: 'value' }
           },
           _data: { key: 'value' }
         },
@@ -16,11 +16,11 @@ RSpec.describe Vaulty::CLI::Tree do
       }
     }
   end
-
-  subject { instance.call }
   let(:output) { instance.prompt.output.string }
 
-  before :each do
+  subject { instance.call }
+
+  before do
     allow(Vaulty).to receive(:catacomb).and_return(CatacombMock)
     allow(Vaulty).to receive(:prompt).and_return(TTY::TestPrompt.new)
     CatacombMock.mock_with(data)
@@ -41,9 +41,10 @@ RSpec.describe Vaulty::CLI::Tree do
 
   context 'when the path contains nothing' do
     let(:catacomb) { CatacombMock.new('secret/unknown') }
+
     it 'raises an exception' do
       expect { subject }.to raise_error(Vaulty::EmptyPath,
-        /Path "secret\/unknown" contains nothing/)
+        %r{Path "secret/unknown" contains nothing})
     end
   end
 end

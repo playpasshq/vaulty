@@ -12,7 +12,7 @@ Gem::Specification.new do |s|
   s.homepage = 'https://fritz.ninja'
   s.license = 'MIT'
 
-  s.required_ruby_version = '~> 2.3'
+  s.required_ruby_version = '~> 2.5'
 
   s.files = `git ls-files -z`.split("\x0").reject do |f|
     f.match(%r{^(test|spec|features)/})
@@ -24,10 +24,13 @@ Gem::Specification.new do |s|
 
   s.add_dependency 'hashdiff', '~> 0.3.0'
   s.add_dependency 'hirb', '~> 0.7.3'
-  s.add_dependency 'tty', '~> 0.7.0'
-  s.add_dependency 'vault', '~> 0.10.1'
+  s.add_dependency 'pastel', '~> 0.7.2'
+  s.add_dependency 'tty-prompt', '~> 0.18.0'
+  s.add_dependency 'tty-spinner', '~> 0.9.0'
+  s.add_dependency 'tty-table', '~> 0.10.0'
+  s.add_dependency 'vault', '~> 0.12.0'
 
   s.add_development_dependency 'rake'
 
-  s.add_runtime_dependency 'gli', '2.17.0'
+  s.add_runtime_dependency 'gli', '2.18.0'
 end

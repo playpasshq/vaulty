@@ -5,15 +5,15 @@ RSpec.describe Vaulty::CLI::Add do
   let(:files) { {} }
   let(:confirmation) { true }
   let(:existing_data) { {} }
+  let(:output) { instance.prompt.output.string }
 
-  before :each do
+  before do
     allow(Vaulty).to receive(:prompt).and_return(TTY::TestPrompt.new)
     allow(Vaulty.prompt).to receive(:no?).and_return(!confirmation)
     CatacombMock.mock_with(existing_data)
   end
 
   subject { instance.call }
-  let(:output) { instance.prompt.output.string }
 
   describe '#call' do
     it 'prints out a banner' do
@@ -33,9 +33,9 @@ RSpec.describe Vaulty::CLI::Add do
     end
 
     context 'when existing data is present' do
-      let(:existing_data) {
+      let(:existing_data) do
         { secret: { account: { _data: { existing: 'value' } } } }
-      }
+      end
 
       it 'prints out the current table' do
         subject
@@ -44,9 +44,9 @@ RSpec.describe Vaulty::CLI::Add do
       end
 
       context 'when existing data matches the given data' do
-        let(:existing_data) {
+        let(:existing_data) do
           { secret: { account: { _data: { key: 'value' } } } }
-        }
+        end
 
         it 'prints out the table with higlights' do
           subject
@@ -56,9 +56,9 @@ RSpec.describe Vaulty::CLI::Add do
 
         context 'when answering no' do
           let(:confirmation) { false }
-          let(:existing_data) {
+          let(:existing_data) do
             { secret: { account: { _data: { key: 'value' } } } }
-          }
+          end
 
           it 'does not write any data' do
             expect(catacomb).not_to receive(:merge)
@@ -68,9 +68,9 @@ RSpec.describe Vaulty::CLI::Add do
 
         context 'when answering yes' do
           let(:confirmation) { true }
-          let(:existing_data) {
+          let(:existing_data) do
             { secret: { account: { _data: { key: 'other value' } } } }
-          }
+          end
 
           it 'overwrites the key and value' do
             expect(catacomb).to receive(:merge).with(key: 'value')
@@ -102,7 +102,7 @@ RSpec.describe Vaulty::CLI::Add do
       it 'prints the resulting table' do
         subject
         expect(output).to include_output('file')
-        expect(output).to include_output("secret")
+        expect(output).to include_output('secret')
       end
     end
   end

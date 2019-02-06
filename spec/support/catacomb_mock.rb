@@ -4,7 +4,7 @@ require 'active_support/core_ext/hash'
 class CatacombMock < Vaulty::Catacomb
   class << self
     def mock_with(data)
-      @data = data
+      @mocked_data = data
     end
 
     def read(path)
@@ -14,11 +14,11 @@ class CatacombMock < Vaulty::Catacomb
 
     def write(path, data)
       structure = path.split('/').map(&:to_sym)
-      if @data.dig(*structure)
-        @data.dig(*structure)[:_data] = data
+      if @mocked_data.dig(*structure)
+        @mocked_data.dig(*structure)[:_data] = data
       else
         nested_data = structure.reverse.inject(_data: data) { |a, n| { n => a } }
-        @data = (@data || {}).deep_merge(nested_data)
+        @mocked_data = (mocked_data || {}).deep_merge(nested_data)
       end
     end
 
@@ -31,13 +31,14 @@ class CatacombMock < Vaulty::Catacomb
     def delete(path)
       structure = path.split('/').map(&:to_sym)
       return unless structure.size > 1
+
       to_delete = structure.pop
       folder = mocked_data.dig(*structure) || {}
       folder.delete(to_delete)
     end
 
     def mocked_data
-      @data ||= {}
+      @mocked_data ||= {}
     end
   end
 end

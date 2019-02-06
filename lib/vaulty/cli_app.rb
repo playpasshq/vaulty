@@ -13,7 +13,7 @@ module Vaulty
       Hash[*value.split(':')]
     end
 
-    desc 'Add a new key/value to the given `PATH`, multiple `key:value` can be provided'
+    desc 'Add a new key/value to the given path, multiple "key:value" can be provided'
     arg(:path)
     command :add do |c|
       c.flag %i(secret s), desc: 'Key/Values to save', type: Array, multiple: true,
@@ -36,6 +36,17 @@ module Vaulty
       c.action do |_global_options, options, _args|
         catacomb = options[:catacomb]
         Vaulty::CLI::Delete.call(catacomb: catacomb)
+      end
+    end
+
+    desc 'Removes a specific key under the path'
+    arg(:path)
+    command :remove do |c|
+      c.flag %i(key k), desc: 'key to remove', type: String, required: true, multiple: true
+      c.action do |_global_options, options, _args|
+        catacomb = options[:catacomb]
+        keys = options[:key]
+        Vaulty::CLI::Remove.call(catacomb: catacomb, keys: keys)
       end
     end
 

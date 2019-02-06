@@ -1,10 +1,11 @@
 inherit_from: .rubocop_todo.yml
+require:
+  - rubocop-rspec
 
 AllCops:
-  TargetRubyVersion: 2.3
+  TargetRubyVersion: 2.5
   Exclude:
     - 'bin/*'
-    - 'spec/**/*'
 
 # Don't care about frozen strings
 Style/FrozenStringLiteralComment:
@@ -15,22 +16,26 @@ Style/Documentation:
   Enabled: false
 
 Metrics/LineLength:
-  Max: 90
+  Max: 120
 
-Style/AlignHash:
+Layout/AlignHash:
   EnforcedColonStyle: key
   EnforcedHashRocketStyle: key
 
-Style/AlignParameters:
+Layout/AlignParameters:
   Enabled: false
 
-Style/IndentHash:
+Layout/IndentHash:
   EnforcedStyle: consistent
 
 # Only exclude the CLI app since we cannot split this up in the current form
 Metrics/ClassLength:
   Exclude:
     - 'lib/vaulty/cli_app.rb'
+
+Metrics/BlockLength:
+  Exclude:
+    - 'spec/**/*.rb'
 
 Style/PercentLiteralDelimiters:
   PreferredDelimiters:
@@ -40,3 +45,54 @@ Style/PercentLiteralDelimiters:
     '%r': '{}'
     '%w': '()'
     '%W': '()'
+
+# -----------------------------------------------------------------------------
+# RSpec
+# -----------------------------------------------------------------------------
+# Conceptually right but practical with ActiveRecord models nearly impossible
+RSpec/AnyInstance:
+  Enabled: false
+
+# For API and feature specs this makes no sense
+RSpec/DescribeClass:
+  Enabled: false
+
+# For testing json response bodies we easily hit this limit
+RSpec/ExampleLength:
+  Enabled: false
+
+# Don't really have a preference and first seems odd
+RSpec/LeadingSubject:
+  Enabled: false
+
+# let! is very handy so allowed
+RSpec/LetSetup:
+  Enabled: false
+
+# Not really a preference and sometimes there is no way around it
+RSpec/MessageSpies:
+  Enabled: false
+
+# Sometimes its clear enough
+RSpec/NamedSubject:
+  Enabled: false
+
+# If we got more then 5 then probably we are testing to much in one block
+RSpec/MultipleExpectations:
+  Max: 20
+
+# Probably will disable this one, for some api specs this is needed
+RSpec/NestedGroups:
+  Max: 6
+
+# If your it is multiline then you cannot use short hand syntax, wonky
+RSpec/ImplicitSubject:
+  Enabled: false
+
+# For now disable, not sure if this matches up with Gems
+RSpec/FilePath:
+  Enabled: false
+
+# Shared contexts don't need to start with when, with or without
+RSpec/ContextWording:
+  Enabled: true

@@ -11,6 +11,7 @@ RSpec.describe Vaulty::CLI::Delete do
       }
     }
   end
+  let(:output) { instance.prompt.output.string }
 
   before do
     allow(Vaulty).to receive(:prompt).and_return(TTY::TestPrompt.new)
@@ -20,7 +21,6 @@ RSpec.describe Vaulty::CLI::Delete do
   end
 
   subject { instance.call }
-  let(:output) { instance.prompt.output.string }
 
   describe '#call' do
     it 'prints out the banner' do
@@ -38,11 +38,12 @@ RSpec.describe Vaulty::CLI::Delete do
 
     it 'removes the top directory recursivly' do
       subject
-      expect(output).to include_output("Successfully deleted everything in path")
+      expect(output).to include_output('Successfully deleted everything in path')
     end
 
     context 'when the path is empty' do
       let(:catacomb) { CatacombMock.new('secret/unknown') }
+
       it 'raises an exception' do
         expect { subject }.to raise_exception(Vaulty::EmptyPath)
       end
@@ -60,19 +61,22 @@ RSpec.describe Vaulty::CLI::Delete do
             },
             user: {
               _data: { wont: 'delete' }
-            },
+            }
           }
         }
       end
 
       it 'recursivly delete' do
         subject
-        expect(CatacombMock.mocked_data).to eq({ secret: { user: { _data: { wont: "delete" } } } })
+        expect(CatacombMock.mocked_data).to eq(secret: {
+          user: { _data: { wont: 'delete' } }
+        })
       end
     end
 
     context 'when answering no' do
       let(:confirmation) { false }
+
       it 'does not delete anything' do
         subject
         expect(CatacombMock).not_to receive(:delete)

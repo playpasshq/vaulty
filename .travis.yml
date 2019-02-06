@@ -9,27 +9,25 @@ before_install:
   - mkdir -p ~/bin
   - mv vault ~/bin
   - export PATH="~/bin:$PATH"
+  - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+  - chmod +x ./cc-test-reporter
+  - ./cc-test-reporter before-build
   - gem update --remote bundler
 
 install:
   - bundle install --retry=3
 
 env:
-  - VAULT_VERSION=0.7.0
-  - VAULT_VERSION=0.8.3
+  - VAULT_VERSION=1.0.2
+  - VAULT_VERSION=0.11.6
 
 rvm:
-  - 2.3.5
-  - 2.4.2
+  - 2.5.3
+  - 2.6.0
 
 script:
   - 'bundle exec rake spec'
   - 'bundle exec rubocop'
 
-addons:
-  code_climate:
-    repo_token:
-      secure: "nof51qBnGYKwvJGsFrECGdnsttHoihTFKBOPlJV7M9qIO5WKGdg/hHFTA1oIaq8njlrGs166IA9gD8IUFpVaesSVMr9W9l7LdgbcMNf+hmTLA8MmrIjTJMsyBSSXK5H7nmd36VS+XzFjhviYeVgSVppZdv+Rxyo3neieq6R6u/Ik3VLTp7RjA38Yh45iiRd549OO+A0ufZ9oOySuA03WPAiPWhyjjScK2L8+HYH5G6pEhhm6+GfN6DZU6QWbNPBCGEDk5RnLb1SfoxYDNlXZlEMre+gzO+78bquZVQOqEGF7VJUD/kDW8ZO4abEvWeDL6tlEsU5EnDAu5EIwDSZFVQUSbsqoyyX8r64EHzomaF4QAIuRZ7/5N8hJ6h+qAlxOJ3NML1+tALQriY5e5vh7ler1IjC3tozfGouMIoKFTe6FVBZir799Dm5jjVfvTDoYoLj1QcsplFtZw0s6lUQc3fNMFNPmS9t/xIDqPGNJvd5jCKYkdXs1bld9XdvjklyZglNp+cU8RMzEr6R9XvQGvjZSZqyO8IOOXMwwJpTNJ6Swt+kmAmogG5s30STE296+4Sp8/u9xfRoYbwKLbj7LwMl7IVnfQLqCfdJxVfRlCw3mxPn1mECXys2C+GFjqh0u/wPci1qAqyBBKnG1kSScfBdvuQqIoAs6nfDZFShLxlg="
-
-after_success:
-  - bundle exec codeclimate-test-reporter
+after_script:
+  - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT

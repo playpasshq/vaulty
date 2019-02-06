@@ -14,6 +14,7 @@ module Vaulty
         spinner.stop
 
         raise Vaulty::EmptyPath, catacomb.path if vaulty_tree.empty?
+
         Vaulty::Output::Tree.render(vaulty_tree, prompt: prompt)
         vaulty_tree
       end

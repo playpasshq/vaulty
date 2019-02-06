@@ -24,10 +24,10 @@ Gem::Specification.new do |s|
 
   s.add_dependency 'hashdiff', '~> 0.3.0'
   s.add_dependency 'hirb', '~> 0.7.3'
+  s.add_dependency 'pastel', '~> 0.7.2'
   s.add_dependency 'tty-prompt', '~> 0.18.0'
   s.add_dependency 'tty-spinner', '~> 0.9.0'
   s.add_dependency 'tty-table', '~> 0.10.0'
-  s.add_dependency 'pastel', '~> 0.7.2'
   s.add_dependency 'vault', '~> 0.12.0'
 
   s.add_development_dependency 'rake'

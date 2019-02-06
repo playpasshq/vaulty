@@ -69,7 +69,7 @@ RSpec.describe Vaulty::CLI::Remove do
 
       it 'shows the ok message' do
         subject
-        expect(output).to include_output('Successfully deleted keys a, c at "secret/account"')
+        expect(output).to include_output('Successfully deleted keys a, c, key at "secret/account"')
       end
     end
   end

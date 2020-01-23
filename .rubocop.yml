@@ -18,14 +18,14 @@ Style/Documentation:
 Metrics/LineLength:
   Max: 120
 
-Layout/AlignHash:
+Layout/HashAlignment:
   EnforcedColonStyle: key
   EnforcedHashRocketStyle: key
 
-Layout/AlignParameters:
+Layout/ParameterAlignment:
   Enabled: false
 
-Layout/IndentHash:
+Layout/FirstHashElementIndentation:
   EnforcedStyle: consistent
 
 # Only exclude the CLI app since we cannot split this up in the current form

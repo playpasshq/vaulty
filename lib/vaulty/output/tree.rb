@@ -11,8 +11,8 @@ module Vaulty
       def render
         output_tree = flatten_tree(Array(tree), 0)
         rendered_tree = Hirb::Helpers::Tree.render(output_tree,
-          type: :directory,
-          multi_line_nodes: true)
+                                                   type: :directory,
+                                                   multi_line_nodes: true)
         prompt.say(rendered_tree)
       end
 

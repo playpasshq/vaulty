@@ -44,7 +44,7 @@ RSpec.describe Vaulty::CLI::Tree do
 
     it 'raises an exception' do
       expect { subject }.to raise_error(Vaulty::EmptyPath,
-        %r{Path "secret/unknown" contains nothing})
+                                        %r{Path "secret/unknown" contains nothing})
     end
   end
 end

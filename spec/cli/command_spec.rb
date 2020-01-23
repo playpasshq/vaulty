@@ -22,8 +22,10 @@ RSpec.describe Vaulty::CLI::Command do
     subject { instance.table('table', highlight: { matching: ['data'], color: :red }) }
 
     it 'delegates to Banner#render' do
-      expect(Vaulty::Output::Table).to receive(:render).with('table',
-        highlight: { matching: ['data'], color: :red }, prompt: instance_of(TTY::Prompt))
+      expect(Vaulty::Output::Table).to receive(:render).with(
+        'table',
+        highlight: { matching: ['data'], color: :red }, prompt: instance_of(TTY::Prompt)
+      )
       subject
     end
   end

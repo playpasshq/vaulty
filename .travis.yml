@@ -24,6 +24,10 @@ rvm:
   - 2.6.5
   - 2.7.0
 
+jobs:
+  allow_failures:
+    - rvm: 2.7.0
+
 script:
   - 'bundle exec rake spec'
   - 'bundle exec rubocop'

@@ -28,7 +28,7 @@ Gem::Specification.new do |s|
   s.add_dependency 'tty-prompt', '~> 0.21'
   s.add_dependency 'tty-spinner', '~> 0.9.0'
   s.add_dependency 'tty-table', '~> 0.11.0'
-  s.add_dependency 'vault', '~> 0.13.0'
+  s.add_dependency 'vault', '~> 0.16'
 
   s.add_development_dependency 'rake'
 
